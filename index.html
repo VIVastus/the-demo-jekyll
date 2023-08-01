@@ -1,5 +1,38 @@
 ---
 layout: default
-title: Homepage
+title: Home page
+news:
+  - title: Big Sale
+    description: Thingies
+    date: 13th Jan
+    category: https://www.sale.com
+  - title: Big News
+    description: MOre Thingies
+    date: 23th Jan
+    category: https://www.news.com
+  - title: Big thing
+    description: The Thing
+    date: 33th Jan
+    category: https://www.thing.com
 ---
-<h1>Welcome to your homepage!</h1>
+
+
+<section class="grid-spaceBetween padded bg-featured latest-news">
+
+    {% for item in page.news %}
+      <!-- First Card   -->
+      <div class="col-4_xs-8">
+        <div class="card">
+          <div class="bg-image">
+            <span> {{item.category}} </span>  
+          </div> 
+          <div class="post-info"> 
+            <p class="date"> {{item.date}} </p> 
+            <h3> {{item.title}} </h3> 
+            <p> {{item.description}} </p> 
+            <a href="{{item.url}}"> Find out more &nbsp; &#10141;</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}  
+</section> 
